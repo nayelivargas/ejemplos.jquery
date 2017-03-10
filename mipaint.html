@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>my paint</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <style> 
+        canvas{
+            background:#def;
+            border: 1px solid #aaa;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="480" height="320">    </canvas>
+    <script>  
+    var mouseprecionado = false  
+        $(function(){
+            var dibujoi = $('canvas')[0]
+            var contexto = dibujoi.getContext('2d');
+            $('canvas').mousemove(function(e){
+                var xpos = e.pageX - dibujoi.offsetLeft;
+                var ypos = e.pageY - dibujoi.offsetTop;
+                if(mouseprecionado){
+                    contexto.lineTo(xpos, ypos)
+                }
+                else{
+                    contexto.moveTo(xpos,ypos)
+                }
+                
+                contexto.stroke()
+            })
+            $('canvas').mousedown(function(e){
+                mouseprecionado = true;
+            })
+             $('canvas').mouseup(function(e){
+                mouseprecionado = false;
+            })
+
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,13 +1,10 @@
 $(function()
 {
     $nuevo = $('<P> parrafo nuevo </p>')
-    $('#boton1')
+    $('#boton')
     $('h2').after($nuevo)
     $(selector).after($nuevo)
-    e.preventDefault();
-    e.
-   
-        
+    e.preventDefault();        
     });
      $(selector).on(events, function () {
 })
