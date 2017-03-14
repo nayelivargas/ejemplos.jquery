@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.1.1.min.js"></script>
+    <title>efectos jquery</title>
+    <style> 
+     .caja{
+         background-color: green;
+         width: 640px;
+         height: 480px;
+     }
+     .pelota{
+         background-color:orange;
+         width: 50px;
+         height: 50px;
+         border-radius: 50%;
+         position: relative;
+     }
+     .caja ,.pelota{
+         border: black solid 1px;
+     }
+    </style>
+</head>
+<body>
+ <h1> ejemplos de efectos  en jquery </h1>
+ <h2>ocultar y mostrar</h2>
+ <button id = "btn-ocultar">ocultar</button>
+ <button id = "btn-mostrar">mostrar</button>
+ <button id = "btn-alternar">alternar </button>
+ <p id = "parrafo1">kbdkddbskdjasldgasdodhydfdwdr</p>
+
+ 
+ <h2>funfido gradual</h2>
+ <button id = "btn-desaparecer">fadeout</button>
+ <button id = "btn-aparecer">fadein</button>
+ <button id = "btn-alternar-fundido">fadetoogle</button>
+ <button id = "btn-fundido-hasta">fadeto</button>
+ <p id = "parrafo2">kbdkddbskdjasldgasdodhydfdwdr</p>
+
+ <h2>Deslizamiento</h2>
+ <button id = "btn-arriba">fadeout</button>
+ <button id = "btn-abajo">fadein</button>
+ <button id = "btn-alternado">fadetoogle</button>
+ <p id = "parrafo3">kbdkddbskdjasldgasdodhydfdwdr</p>
+
+ <h2>animacion</h2>
+ <div class="caja">
+      <div class="pelota"> 
+          </div>
+      </div>
+
+ <script>   
+  $(function(){
+//ejemplo de animacion
+$('.pelota').click(function(){
+            $(this).animate({
+                /*width : '100px',
+                height: '100px'*/
+                left:'600px', top:'400px'
+            },3000,'swing').animate({left:'0px',top:'0px'},3000,'linear')
+      })
+
+      //ejemplos Deslizamiento
+      $('#btn-arriba').click(function(){
+            $('#parrafo3').slideUp('slow');
+      })
+      $('#btn-abajo').click(function(){
+            $('#parrafo3').slideDown('slow');
+      })
+      $('#btn-alternado').click(function(){
+            $('#parrafo3').slideToggle('slow');
+      })
+      //ejemplos defundido
+      $('#btn-desaparecer').click(function(){
+            $('#parrafo2').fadeOut('slow');
+      })
+      $('#btn-aparecer').click(function(){
+            $('#parrafo2').fadeIn('slow');
+      })
+      $('#btn-alternar-fundido').click(function(){
+            $('#parrafo2').fadeToggle('slow');
+      })
+       $('#btn-fundido-hasta').click(function(){
+            $('#parrafo2').fadeTo('slow',0.5);
+      })
+      //ejemplos de aparecer y desaparecer
+      $('#btn-ocultar').click(function(){
+            $('#parrafo1').hide('slow','linear');
+      })
+      $('#btn-mostrar').click(function(){
+            $('#parrafo1').show('fast');
+      })
+      $('#btn-alternar').click(function(){
+            $('#parrafo1').toggle(1000);
+      })
+  })
+ </script>
+
+</body>
+</html>
