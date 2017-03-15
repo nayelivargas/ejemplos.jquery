@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+    <style>
+        #acordeon{
+            width: 400px;
+        }
+        .caja{
+            width: 400px;
+            height: 400px;
+            background-color: lightgreen;
+            border: solid black;
+
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>ejemplos de jqueryui</h1>
+    <h2>ejemplo de acordeon </h2>
+    <div id="acordeon">
+        <h3>  encabezado1  </h3>
+        <div>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel deleniti voluptate asperiores ab quia suscipit ipsam, eligendi sunt beatae, officia at.
+                 Labore et dignissimos, accusantium porro iusto, eos non consectetur.</p>
+        </div>
+        <h3>  encabezado2  </h3>
+        <div>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel deleniti voluptate asperiores ab quia suscipit ipsam, eligendi sunt beatae, officia at.
+                 Labore et dignissimos, accusantium porro iusto, eos non consectetur.</p>
+        </div>
+        <h3>  encabezado3  </h3>
+        <div>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel deleniti voluptate asperiores ab quia suscipit ipsam, eligendi sunt beatae, officia at.
+                 Labore et dignissimos, accusantium porro iusto, eos non consectetur.</p>
+        </div>
+           </div>
+
+           <h2>ejemplo de poestañas</h2>
+           <div id="pestañas">
+               <ul> 
+                   <li>
+                       <a href="contenido1">pestaña1 </a>
+                   </li>
+                   <li>
+                       <a href="contenido2">pestaña2 </a>
+                   </li>
+                   <li>
+                       <a href="contenido3">pestaña3 </a>
+                   </li>
+               </ul>
+               <div id="contenido1">
+                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+               </div>
+               <div id="contenido2">
+                   <p> Eligendi nostrum consequuntur magnam ipsum, ut vitae e
+                       ius praesentium placeat rerum iste esse neque illo. </p>
+
+               </div>
+               <div id="contenido3">
+                   <p> Consectetur qui voluptas non voluptates, esse numquam.</p>
+
+               </div>
+           </div>
+           <h3>ejemplo arrastable</h3>
+           <div class="caja" id="limite">
+           <span id="arrastrable"> arrastrame </span>
+           </div>
+           <script> 
+              $(function(){
+                  $('#acordeon').accordion();
+                  $('#pestañas').tabs();
+                  $('#arrastrable').draggable();
+                  contaitment:'#limite'
+              })
+           </script>
+    
+</body>
+</html>
